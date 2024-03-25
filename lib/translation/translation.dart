@@ -391,7 +391,7 @@ Map<String, dynamic> languages = {
     "text_enter_phone_number": "Enter The Phone Number",
     "text_help": "Help",
     "text_you_contact": "You Can Contact Us",
-    "text_what_mobilenum": "What's your mobile number ?",
+    "text_what_mobilenum": "Enter Your Phone Number:",
     "text_you_get_otp": "You will get a sms for Verification",
     "text_send_otp": "Enter the OTP number send to you at",
     "text_your_name": "what's your name?",

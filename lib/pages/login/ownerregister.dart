@@ -90,7 +90,7 @@ class _OwnersRegisterState extends State<OwnersRegister> {
                     bottom: media.width * 0.05),
                 height: media.height * 1,
                 width: media.width * 1,
-                color: page,
+                color: Colors.black,
                 child: Column(
                   children: [
                     Stack(

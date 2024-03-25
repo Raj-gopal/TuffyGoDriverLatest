@@ -38,7 +38,7 @@ class _LanguagesState extends State<Languages> {
               media.width * 0.05, media.width * 0.05),
           height: media.height * 1,
           width: media.width * 1,
-          color: page,
+          color: Colors.black,
           child: Column(
             children: [
               Container(
@@ -46,7 +46,7 @@ class _LanguagesState extends State<Languages> {
                 width: media.width * 1,
                 padding:
                     EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-                color: page,
+                color: Colors.black,
                 child: Stack(
                   children: [
                     Container(

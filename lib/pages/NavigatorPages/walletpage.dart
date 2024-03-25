@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/pages/NavigatorPages/mercadopago.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -122,7 +123,7 @@ class _WalletPageState extends State<WalletPage> {
                           media.width * 0.05, media.width * 0.05, 0),
                       height: media.height * 1,
                       width: media.width * 1,
-                      color: page,
+                      color: Colors.black,
                       child: Column(
                         children: [
                           SizedBox(height: MediaQuery.of(context).padding.top),
@@ -441,7 +442,7 @@ class _WalletPageState extends State<WalletPage> {
                                 height: media.width * 0.15,
                                 width: media.width * 0.9,
                                 alignment: Alignment.center,
-                                color: Colors.grey.withOpacity(0.3),
+                                color: Colors.white12,
                                 padding: EdgeInsets.only(
                                     left: media.width * 0.02,
                                     right: media.width * 0.02),
@@ -465,8 +466,8 @@ class _WalletPageState extends State<WalletPage> {
                                           },
                                           child: Row(
                                             children: [
-                                              Icon(Icons.money,
-                                                  size: media.width * 0.1,
+                                              Icon(CupertinoIcons.square_arrow_down,
+                                                  size: media.width * 0.08,
                                                   color:
                                                       (ischeckmoneytransfer ==
                                                               3)
@@ -511,8 +512,8 @@ class _WalletPageState extends State<WalletPage> {
                                         child: Row(
                                           children: [
                                             Icon(
-                                              Icons.credit_card,
-                                              size: media.width * 0.1,
+                                              CupertinoIcons.creditcard,
+                                              size: media.width * 0.08,
                                               color: (ischeckmoneytransfer == 1)
                                                   ? buttonColor
                                                   : textColor,
@@ -557,7 +558,7 @@ class _WalletPageState extends State<WalletPage> {
                                           child: Row(
                                             children: [
                                               Icon(Icons.swap_horiz_outlined,
-                                                  size: media.width * 0.1,
+                                                  size: media.width * 0.08,
                                                   color:
                                                       (ischeckmoneytransfer ==
                                                               2)
@@ -608,8 +609,8 @@ class _WalletPageState extends State<WalletPage> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
                                         border: Border.all(
-                                            color: borderLines, width: 1.2),
-                                        color: page),
+                                            color: Colors.white70, width:.5),
+                                        color: Colors.black),
                                     child: Column(children: [
                                       Container(
                                         height: media.width * 0.128,

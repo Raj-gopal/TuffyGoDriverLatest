@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/pages/onTripPage/map_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -166,7 +167,7 @@ class _OtpState extends State<Otp> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Material(
-      color: page,
+      color: Colors.black,
       child: Stack(
         children: [
           Column(
@@ -184,31 +185,34 @@ class _OtpState extends State<Otp> with TickerProviderStateMixin {
                       }
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           SingleChildScrollView(
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  width: media.width * 0.9,
-                                  alignment: Alignment.center,
-                                  child: SizedBox(
-                                    height: 55,
-                                    width: 55,
-                                    child: CustomPaint(
-                                        // ignore: sort_child_properties_last
-                                        child: Center(
-                                          child: MyText(
-                                            text: timerString,
-                                            size: media.width * fourteen,
-                                            fontweight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        painter: CustomTimerPainter(
-                                            animation: aController,
-                                            backgroundColor: buttonColor,
-                                            color: const Color(0xffEDF0F4))),
-                                  ),
-                                ),
+                                // Container(
+                                //   width: media.width * 0.9,
+                                //   alignment: Alignment.center,
+                                //   child: SizedBox(
+                                //     height: 55,
+                                //     width: 55,
+                                //     child: CustomPaint(
+                                //         // ignore: sort_child_properties_last
+                                //         child: Center(
+                                //           child: MyText(
+                                //             text: timerString,
+                                //             size: media.width * fourteen,
+                                //             fontweight: FontWeight.bold,
+                                //           ),
+                                //         ),
+                                //         painter: CustomTimerPainter(
+                                //             animation: aController,
+                                //             backgroundColor: buttonColor,
+                                //             color: const Color(0xffEDF0F4))),
+                                //   ),
+                                // ),
                                 SizedBox(
                                   height: media.height * 0.02,
                                 ),
@@ -216,10 +220,7 @@ class _OtpState extends State<Otp> with TickerProviderStateMixin {
                                     ? SizedBox(
                                         child: MyText(
                                           // ignore: prefer_interpolation_to_compose_strings
-                                          text: languages[choosenLanguage]
-                                                  ['text_enter_otp_at'] +
-                                              countries[phcode]['dial_code'] +
-                                              phnumber,
+                                          text: 'Enter The OTP:',
                                           size: media.width * twenty,
                                           fontweight: FontWeight.bold,
                                         ),
@@ -253,67 +254,73 @@ class _OtpState extends State<Otp> with TickerProviderStateMixin {
                                     textStyle: GoogleFonts.notoSans(
                                         fontSize: media.width * twenty,
                                         fontWeight: FontWeight.w700,
-                                        color: const Color(0xffE0C154)),
+                                        color: const Color(0xffffffff)),
                                     decoration: BoxDecoration(
                                       color: hintColor,
+
+                                          borderRadius: BorderRadius.circular(16)
+
                                     ),
                                   ),
                                 ),
                                 const SizedBox(
                                   height: 20,
                                 ),
-                                GestureDetector(
-                                    onTap: () async {
-                                      if (timerString == "0:00") {
-                                        loginLoading = true;
-                                        valueNotifierLogin.incrementNotifier();
-                                        if (isfromomobile == true) {
-                                          phoneAuthCheck = true;
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: GestureDetector(
+                                      onTap: () async {
+                                        if (timerString == "0:00") {
+                                          loginLoading = true;
+                                          valueNotifierLogin.incrementNotifier();
+                                          if (isfromomobile == true) {
+                                            phoneAuthCheck = true;
 
-                                          phoneAuth(countries[phcode]
-                                                  ['dial_code'] +
-                                              phnumber);
-                                          aController.reverse(
-                                              from: aController.value == 0.0
-                                                  ? 60.0
-                                                  : aController.value);
-                                          setState(() {
-                                            _error = '';
-                                            _pinPutController2.text = '';
-                                            _resend = false;
+                                            phoneAuth(countries[phcode]
+                                                    ['dial_code'] +
+                                                phnumber);
+                                            aController.reverse(
+                                                from: aController.value == 0.0
+                                                    ? 60.0
+                                                    : aController.value);
+                                            setState(() {
+                                              _error = '';
+                                              _pinPutController2.text = '';
+                                              _resend = false;
 
-                                            loginLoading = false;
-                                          });
-                                        } else {
-                                          phoneAuthCheck = true;
+                                              loginLoading = false;
+                                            });
+                                          } else {
+                                            phoneAuthCheck = true;
 
-                                          await sendOTPtoEmail(email);
-                                          aController.reverse(
-                                              from: aController.value == 0.0
-                                                  ? 60.0
-                                                  : aController.value);
+                                            await sendOTPtoEmail(email);
+                                            aController.reverse(
+                                                from: aController.value == 0.0
+                                                    ? 60.0
+                                                    : aController.value);
 
-                                          setState(() {
-                                            _error = '';
-                                            _pinPutController2.text = '';
-                                            _resend = false;
+                                            setState(() {
+                                              _error = '';
+                                              _pinPutController2.text = '';
+                                              _resend = false;
 
-                                            loginLoading = false;
-                                          });
+                                              loginLoading = false;
+                                            });
+                                          }
+                                          // var register = await registerUser();
                                         }
-                                        // var register = await registerUser();
-                                      }
-                                      loginLoading = false;
-                                      valueNotifierLogin.incrementNotifier();
-                                    },
-                                    child: MyText(
-                                      text: languages[choosenLanguage]
-                                          ['text_resend_otp'],
-                                      size: media.width * sixteen,
-                                      color: (_resend == false)
-                                          ? buttonColor.withOpacity(0.4)
-                                          : buttonColor,
-                                    )),
+                                        loginLoading = false;
+                                        valueNotifierLogin.incrementNotifier();
+                                      },
+                                      child: MyText(
+                                        text: languages[choosenLanguage]
+                                            ['text_resend_otp'],
+                                        size: media.width * sixteen,
+                                        color: (_resend == false)
+                                            ? buttonColor.withOpacity(0.4)
+                                            : buttonColor,
+                                      )),
+                                ),
                               ],
                             ),
                           ),

@@ -50,8 +50,8 @@ String ischeckownerordriver = '';
 
 //base url
 String url =
-    'https://tuffygo.com/public/'; //add '/' at the end of the url as 'https://url.com/'
-String mapkey = 'AIzaSyCfTVc37K1LVSCAcbT0vIJS2AJsu0Mc49c';
+    'https://tuffygo.com/'; //add '/' at the end of the url as 'https://url.com/'
+String mapkey = 'AIzaSyDeIkrZ1Iioi6RVxrmm-IU15xp4tNwt3v8';
 String mapStyle = '';
 
 getDetailsOfDevice() async {

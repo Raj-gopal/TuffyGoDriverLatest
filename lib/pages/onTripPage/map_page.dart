@@ -1851,14 +1851,13 @@ class _MapsState extends State<Maps>
                                                                               () {
                                                                             Scaffold.of(context).openDrawer();
                                                                           },
+                                                                          //menu
                                                                           child: Container(
                                                                               height: media.width * 0.1,
                                                                               width: media.width * 0.1,
-                                                                              decoration: BoxDecoration(boxShadow: [
-                                                                                (_bottom == 0) ? BoxShadow(blurRadius: (_bottom == 0) ? 2 : 0, color: (_bottom == 0) ? Colors.black.withOpacity(0.2) : Colors.transparent, spreadRadius: (_bottom == 0) ? 2 : 0) : const BoxShadow(),
-                                                                              ], color: page, borderRadius: BorderRadius.circular(4)),
+
                                                                               alignment: Alignment.center,
-                                                                              child: Icon(Icons.menu, size: media.width * 0.05, color: textColor)),
+                                                                              child: Image.asset('assets/images/slider.png')),
                                                                         );
                                                                       }),
                                                                     ],

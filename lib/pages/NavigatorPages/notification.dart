@@ -87,7 +87,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   Container(
                     height: media.height * 1,
                     width: media.width * 1,
-                    color: page,
+                    color: Colors.black,
                     padding: EdgeInsets.fromLTRB(media.width * 0.05,
                         media.width * 0.05, media.width * 0.05, 0),
                     child: Column(

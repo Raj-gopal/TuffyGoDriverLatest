@@ -31,7 +31,7 @@ class _AggreementPageState extends State<AggreementPage> {
     var media = MediaQuery.of(context).size;
 
     return Material(
-      color: page,
+      color: Colors.black,
       child: Directionality(
         textDirection: (languageDirection == 'rtl')
             ? TextDirection.rtl
@@ -41,136 +41,136 @@ class _AggreementPageState extends State<AggreementPage> {
           children: [
             Expanded(
                 child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: media.height * 0.01,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(top: 15, bottom: 15),
-                    child: MyText(
-                      text: languages[choosenLanguage]['text_accept_head'],
-                      size: media.width * twenty,
-                      fontweight: FontWeight.bold,
-                    ),
-                  ),
-                  Container(
-                    height: media.width * 0.416,
-                    width: media.width * 0.416,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/privacyimage.png'),
-                            fit: BoxFit.contain)),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                      width: media.width * 0.9,
-                      child: RichText(
-                        text: TextSpan(
-                          // text: 'Hello ',
-                          style: GoogleFonts.notoSans(
-                            color: textColor,
-                            fontSize: media.width * fourteen,
-                          ),
-                          children: [
-                            TextSpan(
-                                text: languages[choosenLanguage]
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: media.height * 0.01,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 15, bottom: 15),
+                        child: MyText(
+                          text: languages[choosenLanguage]['text_accept_head'],
+                          size: media.width * twenty,
+                          fontweight: FontWeight.bold,
+                        ),
+                      ),
+                      Container(
+                        height: media.width * 0.416,
+                        width: media.width * 0.416,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/privacyimage.png'),
+                                fit: BoxFit.contain)),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                          width: media.width * 0.9,
+                          child: RichText(
+                            text: TextSpan(
+                              // text: 'Hello ',
+                              style: GoogleFonts.notoSans(
+                                color: textColor,
+                                fontSize: media.width * fourteen,
+                              ),
+                              children: [
+                                TextSpan(
+                                    text: languages[choosenLanguage]
                                     ['text_agree_text1']),
-                            TextSpan(
-                                text: languages[choosenLanguage]
+                                TextSpan(
+                                    text: languages[choosenLanguage]
                                     ['text_terms_of_use'],
-                                style: GoogleFonts.notoSans(
-                                  color: buttonColor,
-                                  fontSize: media.width * fourteen,
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    openBrowser(
-                                        'your terms and condition url here');
-                                  }),
-                            TextSpan(
-                                text: languages[choosenLanguage]
+                                    style: GoogleFonts.notoSans(
+                                      color: buttonColor,
+                                      fontSize: media.width * fourteen,
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        openBrowser(
+                                            'your terms and condition url here');
+                                      }),
+                                TextSpan(
+                                    text: languages[choosenLanguage]
                                     ['text_agree_text2']),
-                            TextSpan(
-                                text: languages[choosenLanguage]
+                                TextSpan(
+                                    text: languages[choosenLanguage]
                                     ['text_privacy'],
-                                style: GoogleFonts.notoSans(
+                                    style: GoogleFonts.notoSans(
+                                      color: buttonColor,
+                                      fontSize: media.width * fourteen,
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        openBrowser('your privacy policy url here');
+                                      }),
+                              ],
+                            ),
+                          )),
+                      Container(
+                        padding: const EdgeInsets.only(top: 15, bottom: 15),
+                        child: Row(
+                          children: [
+                            MyText(
+                                text: languages[choosenLanguage]['text_iagree'],
+                                size: media.width * sixteen),
+                            SizedBox(
+                              width: media.width * 0.05,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                if (ischeck == false) {
+                                  setState(() {
+                                    ischeck = true;
+                                  });
+                                } else {
+                                  setState(() {
+                                    ischeck = false;
+                                  });
+                                }
+                              },
+                              child: Container(
+                                height: media.width * 0.05,
+                                width: media.width * 0.05,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    border:
+                                    Border.all(color: buttonColor, width: 2)),
+                                child: ischeck == false
+                                    ? null
+                                    : Icon(
+                                  Icons.done,
+                                  size: media.width * 0.04,
                                   color: buttonColor,
-                                  fontSize: media.width * fourteen,
                                 ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    openBrowser('your privacy policy url here');
-                                  }),
+                              ),
+                            ),
                           ],
                         ),
-                      )),
-                  Container(
-                    padding: const EdgeInsets.only(top: 15, bottom: 15),
-                    child: Row(
-                      children: [
-                        MyText(
-                            text: languages[choosenLanguage]['text_iagree'],
-                            size: media.width * sixteen),
-                        SizedBox(
-                          width: media.width * 0.05,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            if (ischeck == false) {
-                              setState(() {
-                                ischeck = true;
-                              });
-                            } else {
-                              setState(() {
-                                ischeck = false;
-                              });
-                            }
-                          },
-                          child: Container(
-                            height: media.width * 0.05,
-                            width: media.width * 0.05,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: buttonColor, width: 2)),
-                            child: ischeck == false
-                                ? null
-                                : Icon(
-                                    Icons.done,
-                                    size: media.width * 0.04,
-                                    color: buttonColor,
-                                  ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            )),
+                )),
             ischeck == true
                 ? Padding(
-                    padding: const EdgeInsets.only(top: 15, bottom: 15),
-                    child: Button(
-                        onTap: () async {
-                          _error = '';
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              child: Button(
+                  onTap: () async {
+                    _error = '';
 
-                          navigate();
-                        },
-                        text: languages[choosenLanguage]['text_next']),
-                  )
+                    navigate();
+                  },
+                  text: languages[choosenLanguage]['text_next']),
+            )
                 : Padding(
-                    padding: const EdgeInsets.only(top: 15, bottom: 15),
-                    child: Button(
-                        onTap: () async {},
-                        text: languages[choosenLanguage]['text_next'],
-                        color: Colors.grey,
-                        textcolor: textColor.withOpacity(0.5)),
-                  )
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              child: Button(
+                  onTap: () async {},
+                  text: languages[choosenLanguage]['text_next'],
+                  color: Colors.grey,
+                  textcolor: textColor.withOpacity(0.5)),
+            )
           ],
         ),
       ),

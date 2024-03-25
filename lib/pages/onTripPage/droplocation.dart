@@ -296,58 +296,58 @@ class _DropLocationState extends State<DropLocation>
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Container(
-                              margin:
-                                  const EdgeInsets.only(right: 20, left: 20),
-                              child: InkWell(
-                                onTap: () async {
-                                  if (locationAllowed == true) {
-                                    _controller?.animateCamera(
-                                        CameraUpdate.newLatLngZoom(
-                                            center, 18.0));
-                                  } else {
-                                    if (serviceEnabled == true) {
-                                      setState(() {
-                                        _locationDenied = true;
-                                      });
-                                    } else {
-                                      await location.requestService();
-                                      if (await geolocs
-                                          .GeolocatorPlatform.instance
-                                          .isLocationServiceEnabled()) {
-                                        setState(() {
-                                          _locationDenied = true;
-                                        });
-                                      }
-                                    }
-                                  }
-                                },
-                                child: Container(
-                                  height: media.width * 0.1,
-                                  width: media.width * 0.1,
-                                  decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            blurRadius: 2,
-                                            color:
-                                                Colors.black.withOpacity(0.2),
-                                            spreadRadius: 2)
-                                      ],
-                                      color: page,
-                                      borderRadius: BorderRadius.circular(
-                                          media.width * 0.02)),
-                                  child: Icon(
-                                    Icons.my_location_sharp,
-                                    color: textColor,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            // Container(
+                            //   margin:
+                            //       const EdgeInsets.only(right: 20, left: 20),
+                            //   child: InkWell(
+                            //     onTap: () async {
+                            //       if (locationAllowed == true) {
+                            //         _controller?.animateCamera(
+                            //             CameraUpdate.newLatLngZoom(
+                            //                 center, 18.0));
+                            //       } else {
+                            //         if (serviceEnabled == true) {
+                            //           setState(() {
+                            //             _locationDenied = true;
+                            //           });
+                            //         } else {
+                            //           await location.requestService();
+                            //           if (await geolocs
+                            //               .GeolocatorPlatform.instance
+                            //               .isLocationServiceEnabled()) {
+                            //             setState(() {
+                            //               _locationDenied = true;
+                            //             });
+                            //           }
+                            //         }
+                            //       }
+                            //     },
+                            //     child: Container(
+                            //       height: media.width * 0.1,
+                            //       width: media.width * 0.1,
+                            //       decoration: BoxDecoration(
+                            //           boxShadow: [
+                            //             BoxShadow(
+                            //                 blurRadius: 2,
+                            //                 color:
+                            //                     Colors.black.withOpacity(0.2),
+                            //                 spreadRadius: 2)
+                            //           ],
+                            //           color: Colors.black,
+                            //           borderRadius: BorderRadius.circular(
+                            //               media.width * 0.02)),
+                            //       child: Icon(
+                            //         Icons.my_location_sharp,
+                            //         color: textColor,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                             SizedBox(
                               height: media.width * 0.1,
                             ),
                             Container(
-                              color: page,
+                              color: Colors.black,
                               width: media.width * 1,
                               padding: EdgeInsets.all(media.width * 0.05),
                               child: Column(
@@ -486,7 +486,7 @@ class _DropLocationState extends State<DropLocation>
                               media.width * 0.05,
                               0),
                           width: media.width * 1,
-                          color: page,
+                          color: Colors.black,
                           child: Column(
                             children: [
                               Row(
@@ -503,17 +503,17 @@ class _DropLocationState extends State<DropLocation>
                                       width: media.width * 0.1,
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: (isDarkTheme == true)
-                                                    ? Colors.white
-                                                        .withOpacity(0.2)
-                                                    : Colors.black
-                                                        .withOpacity(0.2),
-                                                spreadRadius: 2,
-                                                blurRadius: 2)
-                                          ],
-                                          color: page),
+                                          // boxShadow: [
+                                          //   BoxShadow(
+                                          //       color: (isDarkTheme == true)
+                                          //           ? Colors.white
+                                          //               .withOpacity(0.2)
+                                          //           : Colors.black
+                                          //               .withOpacity(0.2),
+                                          //       spreadRadius: 2,
+                                          //       blurRadius: 2)
+                                          // ],
+                                          color: Colors.white10),
                                       alignment: Alignment.center,
                                       child: Icon(Icons.arrow_back,
                                           color: textColor),
@@ -528,17 +528,18 @@ class _DropLocationState extends State<DropLocation>
                                         media.width * 0.05,
                                         media.width * 0.02),
                                     decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: (isDarkTheme == true)
-                                                  ? Colors.white
-                                                      .withOpacity(0.2)
-                                                  : Colors.black
-                                                      .withOpacity(0.2),
-                                              spreadRadius: 2,
-                                              blurRadius: 2)
-                                        ],
-                                        color: page,
+                                        // boxShadow: [
+                                        //   BoxShadow(
+                                        //       color: (isDarkTheme == true)
+                                        //           ? Colors.white
+                                        //               .withOpacity(0.2)
+                                        //           : Colors.black
+                                        //               .withOpacity(0.2),
+                                        //       spreadRadius: 2,
+                                        //       blurRadius: 2)
+                                        // ],
+                                        color: Colors.white10,
+
                                         borderRadius: BorderRadius.circular(
                                             media.width * 0.05)),
                                     child: TextField(

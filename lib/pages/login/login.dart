@@ -26,7 +26,7 @@ class Login extends StatefulWidget {
 //code as int for getting phone dial code of choosen country
 String phnumber = ''; // phone number as string entered in input field
 // String phone = '';
-List pages = [1, 2, 3, 4];
+List pages = [1, 2,];
 int currentPage = 0;
 bool loginLoading = true;
 var values = 0;
@@ -176,7 +176,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                 return Stack(
                   children: [
                     Container(
-                      color: page,
+                      color: Colors.black,
                       padding: EdgeInsets.only(
                           // top: media.width * 0.02,
                           //  MediaQuery.of(context).padding.top,
@@ -189,309 +189,325 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: media.height * 0.09),
-                          InkWell(
-                              onTap: () {
-                                if (currentPage == 0) {
-                                  Navigator.pop(context);
-                                } else if (currentPage == 2) {
-                                  setState(() {
-                                    controller.text = '';
-                                    currentPage = 0;
-                                    isverifyemail = false;
-                                    isLoginemail = false;
-                                    isfromomobile = true;
-                                  });
-                                } else if (currentPage == 1) {
-                                  if (currentPage == 1 && isverifyemail) {
-                                    setState(() {
-                                      isfromomobile = false;
-                                      currentPage = 2;
-                                    });
-                                  } else {
-                                    setState(() {
-                                      currentPage = currentPage - 1;
-                                    });
-                                  }
-                                } else {
-                                  if (currentPage == 3 &&
-                                      isverifyemail &&
-                                      isLoginemail) {
-                                    setState(() {
-                                      isfromomobile = false;
-                                    });
-                                  }
-                                  setState(() {
-                                    currentPage = currentPage - 1;
-                                  });
-                                }
-                              },
-                              child: (ownermodule == '0' && currentPage == 0)
-                                  ? Container()
-                                  : Icon(
-                                      Icons.arrow_back_ios,
-                                      color: textColor,
-                                      size: media.height * eighteen,
-                                    )),
+                          // InkWell(
+                          //     onTap: () {
+                          //       if (currentPage == 0) {
+                          //         Navigator.pop(context);
+                          //       } else if (currentPage == 2) {
+                          //         setState(() {
+                          //           controller.text = '';
+                          //           currentPage = 0;
+                          //           isverifyemail = false;
+                          //           isLoginemail = false;
+                          //           isfromomobile = true;
+                          //         });
+                          //       } else if (currentPage == 1) {
+                          //         if (currentPage == 1 && isverifyemail) {
+                          //           setState(() {
+                          //             isfromomobile = false;
+                          //             currentPage = 2;
+                          //           });
+                          //         } else {
+                          //           setState(() {
+                          //             currentPage = currentPage - 1;
+                          //           });
+                          //         }
+                          //       } else {
+                          //         if (currentPage == 3 &&
+                          //             isverifyemail &&
+                          //             isLoginemail) {
+                          //           setState(() {
+                          //             isfromomobile = false;
+                          //           });
+                          //         }
+                          //         setState(() {
+                          //           currentPage = currentPage - 1;
+                          //         });
+                          //       }
+                          //     },
+                          //     child: (ownermodule == '0' && currentPage == 0)
+                          //         ? Container()
+                          //         : Icon(
+                          //             // Icons.arrow_back_ios,
+                          //             // color: textColor,
+                          //             // size: media.height * eighteen,
+                          //           )),
+                          // SizedBox(
+                          //   height: media.height * 0.05,
+                          // ),
+                          // // AnimatedContainer(
+                          //   duration: const Duration(milliseconds: 1000),
+                          //   margin: EdgeInsets.only(
+                          //       left: (languageDirection == 'rtl')
+                          //           ? 0
+                          //           : (media.width * 0.25) * currentPage,
+                          //       right: (languageDirection == 'ltr')
+                          //           ? 0
+                          //           : (media.width * 0.25) * currentPage),
+                          //   child: Image.asset(
+                          //     (languageDirection == 'ltr')
+                          //         ? 'assets/images/car.png'
+                          //         : 'assets/images/car_rtl.png',
+                          //     width: media.width * 0.15,
+                          //   ),
+                          // ),
+                          // Row(
+                          //   children: pages
+                          //       .asMap()
+                          //       .map((key, value) {
+                          //         return MapEntry(
+                          //           key,
+                          //           Row(
+                          //             children: [
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? buttonColor
+                          //                         : buttonColor
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xffFFFFFF)
+                          //                         : const Color(0xffFFFFFF)
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xffFFFFFF)
+                          //                         : const Color(0xffFFFFFF)
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? buttonColor
+                          //                         : buttonColor
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? buttonColor
+                          //                         : buttonColor
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xffFFFFFF)
+                          //                         : const Color(0xffFFFFFF)
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xffFFFFFF)
+                          //                         : const Color(0xffFFFFFF)
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //               Column(
+                          //                 children: [
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? buttonColor
+                          //                         : buttonColor
+                          //                             .withOpacity(0.4),
+                          //                   ),
+                          //                   AnimatedContainer(
+                          //                     duration: const Duration(
+                          //                         milliseconds: 1000),
+                          //                     height:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     width:
+                          //                         (media.width * 0.9 / 4) / 8,
+                          //                     color: (currentPage >= key)
+                          //                         ? const Color(0xff000000)
+                          //                         : const Color(0xff000000)
+                          //                             .withOpacity(0.4),
+                          //                   )
+                          //                 ],
+                          //               ),
+                          //             ],
+                          //           ),
+                          //         );
+                          //       })
+                          //       .values
+                          //       .toList(),
+                          // ),
+                          // SizedBox(
+                          //   height: media.height * 0.05,
+                          // ),
+
                           SizedBox(
-                            height: media.height * 0.05,
+                            height: MediaQuery.of(context).size.height*.09,
                           ),
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 1000),
-                            margin: EdgeInsets.only(
-                                left: (languageDirection == 'rtl')
-                                    ? 0
-                                    : (media.width * 0.25) * currentPage,
-                                right: (languageDirection == 'ltr')
-                                    ? 0
-                                    : (media.width * 0.25) * currentPage),
-                            child: Image.asset(
-                              (languageDirection == 'ltr')
-                                  ? 'assets/images/car.png'
-                                  : 'assets/images/car_rtl.png',
-                              width: media.width * 0.15,
-                            ),
+
+                          Container(
+
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Image.asset('assets/images/driverlogo.png')),
+
                           ),
-                          Row(
-                            children: pages
-                                .asMap()
-                                .map((key, value) {
-                                  return MapEntry(
-                                    key,
-                                    Row(
-                                      children: [
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? buttonColor
-                                                  : buttonColor
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xffFFFFFF)
-                                                  : const Color(0xffFFFFFF)
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xffFFFFFF)
-                                                  : const Color(0xffFFFFFF)
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? buttonColor
-                                                  : buttonColor
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? buttonColor
-                                                  : buttonColor
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xffFFFFFF)
-                                                  : const Color(0xffFFFFFF)
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xffFFFFFF)
-                                                  : const Color(0xffFFFFFF)
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? buttonColor
-                                                  : buttonColor
-                                                      .withOpacity(0.4),
-                                            ),
-                                            AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 1000),
-                                              height:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              width:
-                                                  (media.width * 0.9 / 4) / 8,
-                                              color: (currentPage >= key)
-                                                  ? const Color(0xff000000)
-                                                  : const Color(0xff000000)
-                                                      .withOpacity(0.4),
-                                            )
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                })
-                                .values
-                                .toList(),
-                          ),
+
                           SizedBox(
-                            height: media.height * 0.05,
+                            height: MediaQuery.of(context).size.height*.09,
                           ),
                           (countries.isNotEmpty && currentPage == 0)
                               ? (isLoginemail == false)
@@ -511,12 +527,12 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                               10, 0, 10, 0),
                                           height: 55,
                                           width: media.width * 0.9,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            border:
-                                                Border.all(color: textColor),
-                                          ),
+                                          // decoration: BoxDecoration(
+                                          //   borderRadius:
+                                          //       BorderRadius.circular(10),
+                                          //   border:
+                                          //       Border.all(color: textColor),
+                                          // ),
                                           child: Row(
                                             children: [
                                               InkWell(
@@ -686,95 +702,135 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                                 child: Container(
                                                   height: 50,
                                                   alignment: Alignment.center,
+                                                  decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.circular(16),
+
+                                                      border: Border.all(
+                                                        color: Colors.white,
+                                                      )
+
+                                                  ),
+                                                  width: 80,
+
                                                   child: Row(
+                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
+                                                    CrossAxisAlignment
+                                                        .center,
                                                     children: [
-                                                      Image.network(
-                                                          countries[phcode]
-                                                              ['flag']),
+                                                      //flag to IN
+                                                      Text('IN',
+                                                        style: GoogleFonts.notoSans(
+                                                            fontWeight: FontWeight.w500,
+                                                            fontSize: 16,
+                                                            color: Colors.white
+                                                        ),),
+                                                      // Image.network(
+                                                      //     countries[phcode]
+                                                      //         ['flag']),
                                                       SizedBox(
                                                         width:
-                                                            media.width * 0.02,
+                                                        media.width * 0.02,
                                                       ),
                                                       const SizedBox(
                                                         width: 2,
                                                       ),
-                                                      Icon(
-                                                        Icons.arrow_drop_down,
-                                                        size: 28,
-                                                        color: textColor,
-                                                      )
+
+                                                      Text('+91',
+                                                        style: GoogleFonts.notoSans(
+                                                            fontWeight: FontWeight.w300,
+                                                            fontSize: 16,
+                                                            color: Colors.white
+                                                        ),),
+
+                                                      // Icon(
+                                                      //   Icons.arrow_drop_down,
+                                                      //   size: 28,
+                                                      //   color: textColor,
+                                                      // )
                                                     ],
                                                   ),
                                                 ),
                                               ),
                                               const SizedBox(width: 4),
-                                              Container(
-                                                width: 1,
-                                                height: 55,
-                                                color: underline,
-                                              ),
+                                              // Container(
+                                              //   width: 1,
+                                              //   height: 55,
+                                              //   color: underline,
+                                              // ),
                                               const SizedBox(width: 10),
                                               Expanded(
                                                 child: Container(
+                                                  decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.circular(16),
+
+                                                      border: Border.all(
+                                                        color: Colors.white,
+                                                      )
+
+                                                  ),
                                                   alignment:
-                                                      Alignment.bottomCenter,
+                                                  Alignment.center,
                                                   height: 50,
-                                                  child: TextFormField(
-                                                    textAlign: TextAlign.start,
-                                                    controller: controller,
-                                                    onChanged: (val) {
-                                                      setState(() {
-                                                        phnumber =
-                                                            controller.text;
-                                                      });
-                                                      if (controller
-                                                              .text.length ==
-                                                          countries[phcode][
-                                                              'dial_max_length']) {
-                                                        FocusManager.instance
-                                                            .primaryFocus
-                                                            ?.unfocus();
-                                                      }
-                                                    },
-                                                    maxLength: countries[phcode]
-                                                        ['dial_max_length'],
-                                                    style: GoogleFonts.notoSans(
-                                                        color: textColor,
-                                                        fontSize: media.width *
-                                                            sixteen,
-                                                        letterSpacing: 1),
-                                                    keyboardType:
-                                                        TextInputType.number,
-                                                    decoration: InputDecoration(
-                                                      counterText: '',
-                                                      prefixIcon: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 12),
-                                                        child: MyText(
-                                                          text: countries[
-                                                                      phcode]
-                                                                  ['dial_code']
-                                                              .toString(),
-                                                          size: media.width *
+
+                                                  child: Padding(
+                                                    padding: const EdgeInsets.only(left: 8.0),
+                                                    child: TextFormField(
+                                                      textAlign: TextAlign.start,
+                                                      controller: controller,
+                                                      cursorColor: Colors.white,
+                                                      onChanged: (val) {
+                                                        setState(() {
+                                                          phnumber =
+                                                              controller.text;
+                                                        });
+                                                        if (controller
+                                                                .text.length ==
+                                                            countries[phcode][
+                                                                'dial_max_length']) {
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        }
+                                                      },
+                                                      maxLength: countries[phcode]
+                                                          ['dial_max_length'],
+                                                      style: GoogleFonts.notoSans(
+                                                          color: textColor,
+                                                          fontSize: media.width *
                                                               sixteen,
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          letterSpacing: 1),
+                                                      keyboardType:
+                                                          TextInputType.number,
+                                                      decoration: InputDecoration(
+                                                        counterText: '',
+                                                        // prefixIcon: Padding(
+                                                        //   padding:
+                                                        //       const EdgeInsets
+                                                        //           .only(top: 12),
+                                                        //   child: MyText(
+                                                        //     text: countries[
+                                                        //                 phcode]
+                                                        //             ['dial_code']
+                                                        //         .toString(),
+                                                        //     size: media.width *
+                                                        //         sixteen,
+                                                        //     textAlign:
+                                                        //         TextAlign.center,
+                                                        //   ),
+                                                        // ),
+                                                        hintText: ' X X X X X X X X X X',
+                                                        hintStyle:
+                                                            GoogleFonts.notoSans(
+                                                          color: textColor
+                                                              .withOpacity(0.7),
+                                                          fontSize: media.width *
+                                                              sixteen,
                                                         ),
+                                                        border: InputBorder.none,
+                                                        enabledBorder:
+                                                            InputBorder.none,
                                                       ),
-                                                      hintStyle:
-                                                          GoogleFonts.notoSans(
-                                                        color: textColor
-                                                            .withOpacity(0.7),
-                                                        fontSize: media.width *
-                                                            sixteen,
-                                                      ),
-                                                      border: InputBorder.none,
-                                                      enabledBorder:
-                                                          InputBorder.none,
                                                     ),
                                                   ),
                                                 ),
@@ -782,68 +838,68 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(height: media.height * 0.02),
-                                        MyText(
-                                          text: languages[choosenLanguage]
-                                              ['text_you_get_otp'],
-                                          size: media.width * fourteen,
-                                          color: textColor.withOpacity(0.5),
-                                        ),
-                                        SizedBox(height: media.height * 0.03),
-                                        (isemailmodule == '1')
-                                            ? Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  InkWell(
-                                                    onTap: () {
-                                                      controller.clear();
-                                                      if (isLoginemail ==
-                                                          false) {
-                                                        setState(() {
-                                                          _error = '';
-                                                          isLoginemail = true;
-                                                        });
-                                                      } else {
-                                                        setState(() {
-                                                          _error = '';
-                                                          isLoginemail = false;
-                                                        });
-                                                      }
-                                                    },
-                                                    child: Text(
-                                                      languages[choosenLanguage]
-                                                              [
-                                                              'text_continue_with'] +
-                                                          ' ' +
-                                                          languages[
-                                                                  choosenLanguage]
-                                                              ['text_email'],
-                                                      style:
-                                                          GoogleFonts.notoSans(
-                                                        color: textColor
-                                                            .withOpacity(0.7),
-                                                        fontSize: media.width *
-                                                            sixteen,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                      width:
-                                                          media.width * 0.02),
-                                                  Icon(Icons.email_outlined,
-                                                      size: media.width *
-                                                          eighteen,
-                                                      color: textColor
-                                                          .withOpacity(0.7)),
-                                                ],
-                                              )
-                                            : Container(),
-                                        SizedBox(
-                                          height: media.height * 0.03,
-                                        ),
+                                         SizedBox(height: media.height * 0.02),
+                                        // MyText(
+                                        //   text: languages[choosenLanguage]
+                                        //       ['text_you_get_otp'],
+                                        //   size: media.width * fourteen,
+                                        //   color: textColor.withOpacity(0.5),
+                                        // ),
+                                        // SizedBox(height: media.height * 0.03),
+                                        // (isemailmodule == '1')
+                                        //     ? Row(
+                                        //         mainAxisAlignment:
+                                        //             MainAxisAlignment.center,
+                                        //         children: [
+                                        //           InkWell(
+                                        //             onTap: () {
+                                        //               controller.clear();
+                                        //               if (isLoginemail ==
+                                        //                   false) {
+                                        //                 setState(() {
+                                        //                   _error = '';
+                                        //                   isLoginemail = true;
+                                        //                 });
+                                        //               } else {
+                                        //                 setState(() {
+                                        //                   _error = '';
+                                        //                   isLoginemail = false;
+                                        //                 });
+                                        //               }
+                                        //             },
+                                        //             child: Text(
+                                        //               languages[choosenLanguage]
+                                        //                       [
+                                        //                       'text_continue_with'] +
+                                        //                   ' ' +
+                                        //                   languages[
+                                        //                           choosenLanguage]
+                                        //                       ['text_email'],
+                                        //               style:
+                                        //                   GoogleFonts.notoSans(
+                                        //                 color: textColor
+                                        //                     .withOpacity(0.7),
+                                        //                 fontSize: media.width *
+                                        //                     sixteen,
+                                        //                 fontWeight:
+                                        //                     FontWeight.w400,
+                                        //               ),
+                                        //             ),
+                                        //           ),
+                                        //           SizedBox(
+                                        //               width:
+                                        //                   media.width * 0.02),
+                                        //           Icon(Icons.email_outlined,
+                                        //               size: media.width *
+                                        //                   eighteen,
+                                        //               color: textColor
+                                        //                   .withOpacity(0.7)),
+                                        //         ],
+                                        //       )
+                                        //     : Container(),
+                                        // SizedBox(
+                                        //   height: media.height * 0.03,
+                                        // ),
                                         if (_error != '')
                                           Column(
                                             children: [
@@ -1349,7 +1405,30 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                     //loader
                     (loginLoading == true)
                         ? const Positioned(top: 0, child: Loading())
-                        : Container()
+                        : Container(),
+
+                    Positioned(
+                      top: MediaQuery.of(context).size.height*.35,
+                      left: MediaQuery.of(context).size.width*.2,
+                      child: Text('Book Rides Like a Pro',
+                        style: GoogleFonts.notoSans(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white24
+                        ),),),
+
+                    Positioned(
+                      top: MediaQuery.of(context).size.height*.128,
+                      left: MediaQuery.of(context).size.height*.15,
+                      child: Text('WELCOME TO',
+                        style: GoogleFonts.notoSans(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white24
+                        ),),),
+
+
+
                   ],
                 );
               })),

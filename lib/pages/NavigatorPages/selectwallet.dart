@@ -76,7 +76,7 @@ class _SelectWalletState extends State<SelectWallet> {
                           media.width * 0.05, media.width * 0.05, 0),
                       height: media.height * 1,
                       width: media.width * 1,
-                      color: page,
+                        color: page,
                       child: Column(
                         children: [
                           SizedBox(height: MediaQuery.of(context).padding.top),

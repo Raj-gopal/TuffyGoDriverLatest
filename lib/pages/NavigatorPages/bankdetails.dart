@@ -94,7 +94,7 @@ class _BankDetailsState extends State<BankDetails> {
               Container(
                 height: media.height * 1,
                 width: media.width * 1,
-                color: page,
+                color: Colors.black,
                 padding: EdgeInsets.all(media.width * 0.05),
                 child: Column(
                   children: [
@@ -285,7 +285,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   width: media.width * 0.9,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12),
-                                      color: page,
+                                      color: Colors.white12,
                                       boxShadow: [
                                         BoxShadow(
                                             blurRadius: 2,

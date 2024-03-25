@@ -101,7 +101,7 @@ class _WithdrawState extends State<Withdraw> {
               Container(
                 height: media.height * 1,
                 width: media.width * 1,
-                color: page,
+                color: Colors.black,
                 padding: EdgeInsets.all(media.width * 0.05),
                 child: Column(
                   children: [

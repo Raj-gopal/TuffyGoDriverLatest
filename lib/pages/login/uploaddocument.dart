@@ -65,7 +65,7 @@ class _UploadDocumentState extends State<UploadDocument> {
             Container(
               height: media.height * 1,
               width: media.width * 1,
-              color: page,
+              color: Colors.black,
               padding: EdgeInsets.only(
                   left: media.width * 0.05, right: media.width * 0.05),
               child: Column(
@@ -439,7 +439,7 @@ class _DocumentUploadState extends State<DocumentUpload> {
                   width: media.width * 1,
                   padding: EdgeInsets.only(
                       left: media.width * 0.05, right: media.width * 0.05),
-                  color: page,
+                  color: Colors.black,
                   child: Column(
                     children: [
                       Expanded(
@@ -517,7 +517,7 @@ class _DocumentUploadState extends State<DocumentUpload> {
                                       width: media.width * 0.5,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
-                                        color: Colors.white.withOpacity(0.4),
+                                        color: Colors.white10,
                                       ),
                                       child: Column(
                                         mainAxisAlignment:
@@ -526,6 +526,7 @@ class _DocumentUploadState extends State<DocumentUpload> {
                                           Icon(
                                             Icons.cloud_upload,
                                             size: media.width * 0.08,
+                                            color: Colors.white,
                                           ),
                                           const SizedBox(
                                             height: 10,

@@ -66,7 +66,7 @@ class _MakeComplaintState extends State<MakeComplaint> {
               Container(
                 height: media.height * 1,
                 width: media.width * 1,
-                color: page,
+                color: Colors.black,
                 padding: EdgeInsets.only(
                     left: media.width * 0.05, right: media.width * 0.05),
                 child: Column(
@@ -167,7 +167,7 @@ class _MakeComplaintState extends State<MakeComplaint> {
                                               BorderRadius.circular(12),
                                           border: Border.all(
                                               width: 1.2, color: borderLines),
-                                          color: page,
+                                          color: Colors.black87,
                                         ),
                                         child: SingleChildScrollView(
                                           physics:

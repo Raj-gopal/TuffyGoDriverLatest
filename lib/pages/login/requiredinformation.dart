@@ -54,7 +54,7 @@ class _RequiredInformationState extends State<RequiredInformation> {
                     left: media.width * 0.05, right: media.width * 0.05),
                 height: media.height * 1,
                 width: media.width * 1,
-                color: page,
+                color: Colors.black,
                 child: Column(
                   children: [
                     SizedBox(
@@ -135,7 +135,7 @@ class _RequiredInformationState extends State<RequiredInformation> {
                             Container(
                               width: media.width * 0.9,
                               padding: EdgeInsets.all(media.width * 0.04),
-                              color: page,
+                              color: Colors.black,
                               child: Column(
                                 children: [
                                   InkWell(

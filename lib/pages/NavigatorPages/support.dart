@@ -28,7 +28,7 @@ class _SupportPageState extends State<SupportPage> {
                   padding: EdgeInsets.all(media.width * 0.05),
                   height: media.height * 1,
                   width: media.width * 1,
-                  color: page,
+                  color: Colors.black,
                   child: Column(
                     children: [
                       SizedBox(height: MediaQuery.of(context).padding.top),
@@ -78,7 +78,7 @@ class _SupportPageState extends State<SupportPage> {
                                   },
                                   child: Container(
                                     padding: EdgeInsets.all(media.width * 0.03),
-                                    color: page,
+                                    color: Colors.black87,
                                     child: Column(
                                       children: [
                                         Row(

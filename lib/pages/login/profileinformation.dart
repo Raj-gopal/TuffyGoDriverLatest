@@ -77,7 +77,7 @@ class _ProfileInformationState extends State<ProfileInformation>
                   left: media.width * 0.05, right: media.width * 0.05),
               height: media.height * 1,
               width: media.width * 1,
-              color: page,
+              color: Colors.black,
               child: Column(
                 children: [
                   SizedBox(

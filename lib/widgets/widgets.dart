@@ -539,7 +539,7 @@ class SubMenu extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Container(
-            color: page,
+            color: Colors.black87,
             padding: EdgeInsets.all(media.width * 0.03),
             child: Column(
               children: [

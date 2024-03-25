@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/pages/NavigatorPages/settings.dart';
 import 'package:flutter_driver/pages/NavigatorPages/support.dart';
@@ -21,6 +22,7 @@ import '../NavigatorPages/walletpage.dart';
 import '../login/landingpage.dart';
 import '../login/login.dart';
 import '../onTripPage/map_page.dart';
+import 'package:line_icons/line_icons.dart';
 
 class NavDrawer extends StatefulWidget {
   const NavDrawer({Key? key}) : super(key: key);
@@ -210,6 +212,148 @@ class _NavDrawerState extends State<NavDrawer> {
                                     width: media.width * 0.7,
                                     child: Column(
                                       children: [
+
+                                         SizedBox(height: media.height*0.01,),
+                                        //Pro rider
+                                        InkWell(
+                                          onTap: ()  {
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    padding: EdgeInsets
+                                                        .fromLTRB(
+                                                        media.width *
+                                                            0.01,
+                                                        media.width *
+                                                            0.025,
+                                                        media.width *
+                                                            0.025,
+                                                        media.width *
+                                                            0.025),
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(CupertinoIcons.car_detailed,color: textColor
+                                                            .withOpacity(
+                                                            0.8),),
+                                                        SizedBox(
+                                                          width: media
+                                                              .width *
+                                                              0.025,
+                                                        ),
+                                                        ShowUp(
+                                                          delay: 200,
+                                                          child: SizedBox(
+                                                              width: media
+                                                                  .width *
+                                                                  0.45,
+                                                              child:
+                                                              MyText(
+                                                                text: 'Pro Rider',
+                                                                overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                                size: media
+                                                                    .width *
+                                                                    sixteen,
+                                                                color: textColor
+                                                                    .withOpacity(
+                                                                    0.8),
+                                                              )),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
+
+                                                  // SizedBox(width: media.width*0.05,),
+                                                  if (userDetails[
+                                                  'my_route_address'] !=
+                                                      null)
+                                                    Container(
+                                                      padding: EdgeInsets.only(
+                                                          left: media
+                                                              .width *
+                                                              0.005,
+                                                          right: media
+                                                              .width *
+                                                              0.005),
+                                                      height:
+                                                      media.width *
+                                                          0.05,
+                                                      width: media.width *
+                                                          0.1,
+                                                      decoration:
+                                                      BoxDecoration(
+                                                        borderRadius: BorderRadius
+                                                            .circular(media
+                                                            .width *
+                                                            0.025),
+                                                        color: (userDetails[
+                                                        'enable_my_route_booking'] ==
+                                                            1)
+                                                            ? Colors.green
+                                                            .withOpacity(
+                                                            0.4)
+                                                            : Colors.grey
+                                                            .withOpacity(
+                                                            0.6),
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                        (userDetails[
+                                                        'enable_my_route_booking'] ==
+                                                            1)
+                                                            ? MainAxisAlignment
+                                                            .end
+                                                            : MainAxisAlignment
+                                                            .start,
+                                                        children: [
+                                                          Container(
+                                                            height: media
+                                                                .width *
+                                                                0.045,
+                                                            width: media
+                                                                .width *
+                                                                0.045,
+                                                            decoration:
+                                                            BoxDecoration(
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                              color: (userDetails['enable_my_route_booking'] ==
+                                                                  1)
+                                                                  ? Colors
+                                                                  .green
+                                                                  : Colors
+                                                                  .grey,
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                ],
+                                              ),
+                                              Container(
+                                                alignment:
+                                                Alignment.centerRight,
+                                                padding: EdgeInsets.only(
+                                                  top: media.width * 0.01,
+                                                  left:
+                                                  media.width * 0.09,
+                                                ),
+                                                child: Container(
+                                                  color: textColor
+                                                      .withOpacity(0.1),
+                                                  height: 1,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+
+
+
                                         userDetails['role'] != 'owner' &&
                                                 userDetails[
                                                         'enable_my_route_booking_feature'] ==
@@ -384,7 +528,7 @@ class _NavDrawerState extends State<NavDrawer> {
                                           },
                                           text: languages[choosenLanguage]
                                               ['text_enable_history'],
-                                          icon: Icons.view_list_outlined,
+                                          icon: CupertinoIcons.gobackward,
                                         ),
                                         //Notifications
 
@@ -416,8 +560,7 @@ class _NavDrawerState extends State<NavDrawer> {
                                                           Row(
                                                             children: [
                                                               Icon(
-                                                                Icons
-                                                                    .notifications_none,
+                                                                CupertinoIcons.bell,
                                                                 size: media
                                                                         .width *
                                                                     0.075,
@@ -532,7 +675,7 @@ class _NavDrawerState extends State<NavDrawer> {
                                                 },
                                                 text: languages[choosenLanguage]
                                                     ['text_enable_wallet'],
-                                                icon: Icons.payment,
+                                                icon: LineIcons.wallet,
                                               )
                                             : Container(),
 
@@ -600,8 +743,8 @@ class _NavDrawerState extends State<NavDrawer> {
                                                 },
                                                 text: languages[choosenLanguage]
                                                     ['text_updateBank'],
-                                                icon: Icons
-                                                    .account_balance_outlined,
+                                                icon: LineIcons.piggyBank
+                                          ,
                                               )
                                             : Container(),
 
@@ -627,7 +770,7 @@ class _NavDrawerState extends State<NavDrawer> {
 
                                         //makecomplaints
                                         NavMenu(
-                                          icon: Icons.toc,
+                                          icon: CupertinoIcons.square_list,
                                           text: languages[choosenLanguage]
                                               ['text_make_complaints'],
                                           onTap: () {
@@ -653,7 +796,7 @@ class _NavDrawerState extends State<NavDrawer> {
                                           },
                                           text: languages[choosenLanguage]
                                               ['text_settings'],
-                                          icon: Icons.settings,
+                                          icon: CupertinoIcons.gear_big,
                                         ),
 
                                         //support
@@ -796,8 +939,7 @@ class _NavDrawerState extends State<NavDrawer> {
                                                 },
                                                 text: languages[choosenLanguage]
                                                     ['text_enable_referal'],
-                                                icon: Icons
-                                                    .offline_share_outlined,
+                                                icon: CupertinoIcons.text_insert,
                                               )
                                             : Container(),
 
@@ -822,7 +964,7 @@ class _NavDrawerState extends State<NavDrawer> {
                             ),
                             height: media.width * 0.13,
                             width: media.width * 0.8,
-                            color: Colors.grey.withOpacity(0.3),
+                            color: Colors.white12,
                             child: Row(
                               mainAxisAlignment: (languageDirection == 'ltr')
                                   ? MainAxisAlignment.start

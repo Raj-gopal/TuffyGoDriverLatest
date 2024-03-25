@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:flutter_driver/pages/loadingPage/loading.dart';
 import 'package:flutter_driver/pages/login/login.dart';
 import 'package:flutter_driver/pages/onTripPage/map_page.dart';
@@ -82,7 +82,7 @@ class _HistoryState extends State<History> {
           Container(
             height: media.height * 1,
             width: media.width * 1,
-            color: page,
+            color: Colors.black,
             padding: EdgeInsets.fromLTRB(
                 media.width * 0.05, media.width * 0.05, media.width * 0.05, 0),
             child: Column(
@@ -119,12 +119,13 @@ class _HistoryState extends State<History> {
                   decoration: BoxDecoration(
                       color: page,
                       borderRadius: BorderRadius.circular(12),
-                      boxShadow: [
-                        BoxShadow(
-                            blurRadius: 2,
-                            spreadRadius: 2,
-                            color: Colors.grey.withOpacity(0.2))
-                      ]),
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //       blurRadius: 2,
+                      //       spreadRadius: 2,
+                      //       color: Colors.grey.withOpacity(0.2))
+                      // ]
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -150,14 +151,14 @@ class _HistoryState extends State<History> {
                                 borderRadius: (_showHistory == 0)
                                     ? BorderRadius.circular(12)
                                     : null,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: (_showHistory == 0)
-                                          ? Colors.black.withOpacity(0.2)
-                                          : page,
-                                      spreadRadius: 2,
-                                      blurRadius: 2)
-                                ],
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //       color: (_showHistory == 0)
+                                //           ? Colors.black.withOpacity(0.2)
+                                //           : page,
+                                //       spreadRadius: 2,
+                                //       blurRadius: 2)
+                                // ],
                                 color: (_showHistory == 0) ? textColor : page),
                             child: MyText(
                                 text: languages[choosenLanguage]
@@ -188,14 +189,14 @@ class _HistoryState extends State<History> {
                                 borderRadius: (_showHistory == 1)
                                     ? BorderRadius.circular(12)
                                     : null,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: (_showHistory == 1)
-                                          ? Colors.black.withOpacity(0.2)
-                                          : page,
-                                      spreadRadius: 2,
-                                      blurRadius: 2)
-                                ],
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //       color: (_showHistory == 1)
+                                //           ? Colors.black.withOpacity(0.2)
+                                //           : page,
+                                //       spreadRadius: 2,
+                                //       blurRadius: 2)
+                                // ],
                                 color: (_showHistory == 1) ? textColor : page),
                             child: MyText(
                                 text: languages[choosenLanguage]
@@ -226,14 +227,14 @@ class _HistoryState extends State<History> {
                                 borderRadius: (_showHistory == 2)
                                     ? BorderRadius.circular(12)
                                     : null,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: (_showHistory == 2)
-                                          ? Colors.black.withOpacity(0.2)
-                                          : page,
-                                      spreadRadius: 2,
-                                      blurRadius: 2)
-                                ],
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //       color: (_showHistory == 2)
+                                //           ? Colors.black.withOpacity(0.2)
+                                //           : page,
+                                //       spreadRadius: 2,
+                                //       blurRadius: 2)
+                                // ],
                                 color: (_showHistory == 2) ? textColor : page),
                             child: MyText(
                                 text: languages[choosenLanguage]

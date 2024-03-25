@@ -67,6 +67,7 @@ dependencies:
   intl: ^0.18.1
   pinput: ^2.2.14
   device_info_plus: ^9.0.3
+  line_icons: ^2.0.3
 
 dev_dependencies:
   flutter_test:
