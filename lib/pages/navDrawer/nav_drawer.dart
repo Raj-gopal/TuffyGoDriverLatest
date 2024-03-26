@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/pages/NavigatorPages/settings.dart';
 import 'package:flutter_driver/pages/NavigatorPages/support.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+//import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../functions/functions.dart';
 import '../../styles/styles.dart';
@@ -218,15 +218,15 @@ class _NavDrawerState extends State<NavDrawer> {
                                         //Pro rider
                                         InkWell(
                                           onTap: ()  {
-                                            Fluttertoast.showToast(
-                                                msg: "Currently Unavailable",
-                                                toastLength: Toast.LENGTH_SHORT,
-                                                gravity: ToastGravity.CENTER,
-                                                timeInSecForIosWeb: 1,
-                                                backgroundColor: Colors.red,
-                                                textColor: Colors.white,
-                                                fontSize: 16.0
-                                            );
+                                            // Fluttertoast.showToast(
+                                            //     msg: "Currently Unavailable",
+                                            //     toastLength: Toast.LENGTH_SHORT,
+                                            //     gravity: ToastGravity.CENTER,
+                                            //     timeInSecForIosWeb: 1,
+                                            //     backgroundColor: Colors.red,
+                                            //     textColor: Colors.white,
+                                            //     fontSize: 16.0
+                                            // );
                                           },
                                           child: Column(
                                             children: [
