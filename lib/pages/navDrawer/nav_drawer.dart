@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/pages/NavigatorPages/settings.dart';
 import 'package:flutter_driver/pages/NavigatorPages/support.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../functions/functions.dart';
 import '../../styles/styles.dart';
@@ -76,7 +77,7 @@ class _NavDrawerState extends State<NavDrawer> {
                   ? TextDirection.rtl
                   : TextDirection.ltr,
               child: Drawer(
-                  backgroundColor: page,
+                  backgroundColor: Colors.black,
                   child: SizedBox(
                     width: media.width * 0.7,
                     child: Column(
@@ -217,6 +218,15 @@ class _NavDrawerState extends State<NavDrawer> {
                                         //Pro rider
                                         InkWell(
                                           onTap: ()  {
+                                            Fluttertoast.showToast(
+                                                msg: "Currently Unavailable",
+                                                toastLength: Toast.LENGTH_SHORT,
+                                                gravity: ToastGravity.CENTER,
+                                                timeInSecForIosWeb: 1,
+                                                backgroundColor: Colors.red,
+                                                textColor: Colors.white,
+                                                fontSize: 16.0
+                                            );
                                           },
                                           child: Column(
                                             children: [
@@ -331,7 +341,13 @@ class _NavDrawerState extends State<NavDrawer> {
                                                           )
                                                         ],
                                                       ),
-                                                    )
+                                                    ),
+
+                                                  Container(
+                                                      height:24,
+                                                      width: 32,
+                                                      child: Image.asset('assets/images/to.png')),
+
                                                 ],
                                               ),
                                               Container(
@@ -926,22 +942,22 @@ class _NavDrawerState extends State<NavDrawer> {
                                               );
                                             }),
 
-                                        //referral page
-                                        userDetails['owner_id'] == null &&
-                                                userDetails['role'] == 'driver'
-                                            ? NavMenu(
-                                                onTap: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              const ReferralPage()));
-                                                },
-                                                text: languages[choosenLanguage]
-                                                    ['text_enable_referal'],
-                                                icon: CupertinoIcons.text_insert,
-                                              )
-                                            : Container(),
+                                        // //referral page
+                                        // userDetails['owner_id'] == null &&
+                                        //         userDetails['role'] == 'driver'
+                                        //     ? NavMenu(
+                                        //         onTap: () {
+                                        //           Navigator.push(
+                                        //               context,
+                                        //               MaterialPageRoute(
+                                        //                   builder: (context) =>
+                                        //                       const ReferralPage()));
+                                        //         },
+                                        //         text: languages[choosenLanguage]
+                                        //             ['text_enable_referal'],
+                                        //         icon: CupertinoIcons.text_insert,
+                                        //       )
+                                          //  : Container(),
 
                                         //logout
                                       ],

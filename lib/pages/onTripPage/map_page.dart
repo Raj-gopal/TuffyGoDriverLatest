@@ -3244,59 +3244,59 @@ class _MapsState extends State<Maps>
                                                                   ),
                                                                 ))
                                                             : Container(),
-                                                        (driverReq.isEmpty &&
-                                                                userDetails['role'] !=
-                                                                    'owner' &&
-                                                                userDetails[
-                                                                        'active'] ==
-                                                                    true &&
-                                                                userDetails[
-                                                                        'show_instant_ride_feature_on_mobile_app'] ==
-                                                                    '1')
-                                                            ? Positioned(
-                                                                bottom:
-                                                                    media.width *
-                                                                        0.05,
-                                                                left: media.width *
-                                                                    0.05,
-                                                                right: media
-                                                                        .width *
-                                                                    0.05,
-                                                                child: Row(
-                                                                  children: [
-                                                                    Button(
-                                                                        color:
-                                                                            theme,
-                                                                        onTap:
-                                                                            () async {
-                                                                          addressList
-                                                                              .clear();
-                                                                          var val = await geoCoding(
-                                                                              center.latitude,
-                                                                              center.longitude);
-                                                                          setState(
-                                                                              () {
-                                                                            if (addressList.where((element) => element.id == 'pickup').isNotEmpty) {
-                                                                              var add = addressList.firstWhere((element) => element.id == 'pickup');
-                                                                              add.address = val;
-                                                                              add.latlng = LatLng(center.latitude, center.longitude);
-                                                                            } else {
-                                                                              addressList.add(AddressList(id: 'pickup', address: val, latlng: LatLng(center.latitude, center.longitude)));
-                                                                            }
-                                                                          });
-                                                                          if (addressList
-                                                                              .isNotEmpty) {
-                                                                            // ignore: use_build_context_synchronously
-                                                                            Navigator.push(context,
-                                                                                MaterialPageRoute(builder: (context) => const DropLocation()));
-                                                                          }
-                                                                        },
-                                                                        text: languages[choosenLanguage]
-                                                                            [
-                                                                            'text_instant_ride'])
-                                                                  ],
-                                                                ))
-                                                            : Container(),
+                                                        // (driverReq.isEmpty &&
+                                                        //         userDetails['role'] !=
+                                                        //             'owner' &&
+                                                        //         userDetails[
+                                                        //                 'active'] ==
+                                                        //             true &&
+                                                        //         userDetails[
+                                                        //                 'show_instant_ride_feature_on_mobile_app'] ==
+                                                        //             '1')
+                                                            // ? Positioned(
+                                                            //     bottom:
+                                                            //         media.width *
+                                                            //             0.05,
+                                                            //     left: media.width *
+                                                            //         0.05,
+                                                            //     right: media
+                                                            //             .width *
+                                                            //         0.05,
+                                                            //     child: Row(
+                                                            //       children: [
+                                                            //         Button(
+                                                            //             color:
+                                                            //                 theme,
+                                                            //             onTap:
+                                                            //                 () async {
+                                                            //               addressList
+                                                            //                   .clear();
+                                                            //               var val = await geoCoding(
+                                                            //                   center.latitude,
+                                                            //                   center.longitude);
+                                                            //               setState(
+                                                            //                   () {
+                                                            //                 if (addressList.where((element) => element.id == 'pickup').isNotEmpty) {
+                                                            //                   var add = addressList.firstWhere((element) => element.id == 'pickup');
+                                                            //                   add.address = val;
+                                                            //                   add.latlng = LatLng(center.latitude, center.longitude);
+                                                            //                 } else {
+                                                            //                   addressList.add(AddressList(id: 'pickup', address: val, latlng: LatLng(center.latitude, center.longitude)));
+                                                            //                 }
+                                                            //               });
+                                                            //               if (addressList
+                                                            //                   .isNotEmpty) {
+                                                            //                 // ignore: use_build_context_synchronously
+                                                            //                 Navigator.push(context,
+                                                            //                     MaterialPageRoute(builder: (context) => const DropLocation()));
+                                                            //               }
+                                                            //             },
+                                                            //             text: languages[choosenLanguage]
+                                                            //                 [
+                                                            //                 'text_instant_ride'])
+                                                            //       ],
+                                                            //     ))
+                                                            // : Container(),
 
                                                         //user cancelled request popup
                                                         (_reqCancelled == true)
@@ -3361,7 +3361,7 @@ class _MapsState extends State<Maps>
                                                     height: media.height * 0.05,
                                                     width: media.height * 0.05,
                                                     decoration: BoxDecoration(
-                                                      color: page,
+                                                      color: Colors.black,
                                                       shape: BoxShape.circle,
                                                     ),
                                                     child: Icon(Icons.cancel,
@@ -3379,7 +3379,7 @@ class _MapsState extends State<Maps>
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(12),
-                                                color: page,
+                                                color: Colors.black,
                                                 boxShadow: [
                                                   BoxShadow(
                                                       blurRadius: 2.0,
@@ -3493,7 +3493,7 @@ class _MapsState extends State<Maps>
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             10),
-                                                    color: page,
+                                                    color: Colors.black,
                                                     boxShadow: [
                                                       BoxShadow(
                                                           color: Colors.black
@@ -3547,7 +3547,7 @@ class _MapsState extends State<Maps>
                                                               Alignment.center,
                                                           width: media.width *
                                                               0.12,
-                                                          color: page,
+                                                          color: Colors.black,
                                                           child: TextFormField(
                                                             onChanged: (val) {
                                                               if (val.length ==
@@ -3597,7 +3597,7 @@ class _MapsState extends State<Maps>
                                                               Alignment.center,
                                                           width: media.width *
                                                               0.12,
-                                                          color: page,
+                                                          color: Colors.black,
                                                           child: TextFormField(
                                                             onChanged: (val) {
                                                               if (val.length ==
@@ -3653,7 +3653,7 @@ class _MapsState extends State<Maps>
                                                               Alignment.center,
                                                           width: media.width *
                                                               0.12,
-                                                          color: page,
+                                                          color: Colors.black,
                                                           child: TextFormField(
                                                             onChanged: (val) {
                                                               if (val.length ==
@@ -3709,7 +3709,7 @@ class _MapsState extends State<Maps>
                                                               Alignment.center,
                                                           width: media.width *
                                                               0.12,
-                                                          color: page,
+                                                          color: Colors.black,
                                                           child: TextFormField(
                                                             onChanged: (val) {
                                                               if (val.length ==
@@ -3851,7 +3851,7 @@ class _MapsState extends State<Maps>
                                                     media.width * 0.05,
                                                 media.width * 0.1,
                                                 media.width * 0.05),
-                                            color: page,
+                                            color: Colors.black,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
@@ -3875,7 +3875,7 @@ class _MapsState extends State<Maps>
                                                               0.05,
                                                           decoration:
                                                               BoxDecoration(
-                                                            color: page,
+                                                            color: Colors.black,
                                                             shape:
                                                                 BoxShape.circle,
                                                           ),
@@ -3953,7 +3953,7 @@ class _MapsState extends State<Maps>
                                                                               .width *
                                                                           0.12,
                                                                       color:
-                                                                          page,
+                                                                      Colors.black,
                                                                       child:
                                                                           TextFormField(
                                                                         onChanged:
@@ -3993,7 +3993,7 @@ class _MapsState extends State<Maps>
                                                                               .width *
                                                                           0.12,
                                                                       color:
-                                                                          page,
+                                                                      Colors.black,
                                                                       child:
                                                                           TextFormField(
                                                                         onChanged:
@@ -4039,7 +4039,7 @@ class _MapsState extends State<Maps>
                                                                               .width *
                                                                           0.12,
                                                                       color:
-                                                                          page,
+                                                                      Colors.black,
                                                                       child:
                                                                           TextFormField(
                                                                         onChanged:
@@ -4085,7 +4085,7 @@ class _MapsState extends State<Maps>
                                                                               .width *
                                                                           0.12,
                                                                       color:
-                                                                          page,
+                                                                      Colors.black,
                                                                       child:
                                                                           TextFormField(
                                                                         onChanged:
@@ -4253,7 +4253,7 @@ class _MapsState extends State<Maps>
                                                     width: media.width * 0.1,
                                                     decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
-                                                        color: page),
+                                                        color: Colors.black),
                                                     child: Icon(
                                                         Icons.cancel_outlined,
                                                         color: textColor),
@@ -4272,7 +4272,7 @@ class _MapsState extends State<Maps>
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(12),
-                                                color: page,
+                                                color: Colors.black,
                                                 boxShadow: [
                                                   BoxShadow(
                                                       blurRadius: 2.0,
@@ -4380,7 +4380,7 @@ class _MapsState extends State<Maps>
                                                   media.width * 0.05),
                                               width: media.width * 0.9,
                                               decoration: BoxDecoration(
-                                                  color: page,
+                                                  color: Colors.black,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           12)),
@@ -4795,7 +4795,7 @@ class _MapsState extends State<Maps>
                                                       decoration: BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
-                                                          color: page),
+                                                          color: Colors.black),
                                                       child: InkWell(
                                                           onTap: () {
                                                             setState(() {
@@ -4815,7 +4815,7 @@ class _MapsState extends State<Maps>
                                               decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(12),
-                                                  color: page),
+                                                  color: Colors.black),
                                               child: Column(
                                                 children: [
                                                   Text(
@@ -4904,7 +4904,7 @@ class _MapsState extends State<Maps>
                                                       decoration: BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
-                                                          color: page),
+                                                          color: Colors.black),
                                                       child: InkWell(
                                                           onTap: () {
                                                             setState(() {
@@ -4923,7 +4923,7 @@ class _MapsState extends State<Maps>
                                               decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(12),
-                                                  color: page),
+                                                  color: Colors.black),
                                               child: Column(
                                                 children: [
                                                   Text(
@@ -4998,7 +4998,7 @@ class _MapsState extends State<Maps>
                                                       decoration: BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
-                                                          color: page),
+                                                          color: Colors.black),
                                                       child: InkWell(
                                                           onTap: () {
                                                             setState(() {
@@ -5018,7 +5018,7 @@ class _MapsState extends State<Maps>
                                               decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(12),
-                                                  color: page),
+                                                  color: Colors.black),
                                               child: Column(
                                                 children: [
                                                   Text(
@@ -5158,7 +5158,7 @@ class _MapsState extends State<Maps>
                                                             BoxDecoration(
                                                                 shape: BoxShape
                                                                     .circle,
-                                                                color: page),
+                                                                color: Colors.black),
                                                         child: const Icon(Icons
                                                             .cancel_outlined),
                                                       ),
@@ -5178,7 +5178,7 @@ class _MapsState extends State<Maps>
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             12),
-                                                    color: page),
+                                                    color: Colors.black),
                                                 child: SingleChildScrollView(
                                                     physics:
                                                         const BouncingScrollPhysics(),
@@ -5363,7 +5363,7 @@ class _MapsState extends State<Maps>
                                                       decoration: BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
-                                                          color: page),
+                                                          color: Colors.black),
                                                       child: Icon(
                                                         Icons.cancel_outlined,
                                                         color: textColor,
@@ -5387,7 +5387,7 @@ class _MapsState extends State<Maps>
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             12),
-                                                    color: page),
+                                                    color: Colors.black),
                                                 child: Column(
                                                   children: [
                                                     SizedBox(

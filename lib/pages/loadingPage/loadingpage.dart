@@ -185,7 +185,7 @@ class _LoadingPageState extends State<LoadingPage> {
                     height: media.width * 0.6,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/images/logo.png'),
+                            image: AssetImage('assets/images/ic_launcher.png'),
                             fit: BoxFit.contain)),
                   ),
                 ],
